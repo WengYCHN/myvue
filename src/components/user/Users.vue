@@ -36,7 +36,7 @@
                     <template slot-scope="scope">
                             <!-- Button -->
                             <el-button type="primary" icon="el-icon-edit" size="mini" @click="showEditDialog(scope.row.id)"></el-button>
-                            <el-button type="danger" icon="el-icon-delete"size="mini" @click="deleteUser(scope.row.id)"></el-button>
+                            <el-button type="danger" icon="el-icon-delete" size="mini" @click="deleteUser(scope.row.id)"></el-button>
                             <!-- Tooltip -->
                             <el-tooltip effect="dark" content="分配角色" placement="top" :enterable="false">
                                 <el-button type="warning" icon="el-icon-setting" size="mini" @click="showSetRoleDialog(scope.row)"></el-button>

@@ -30,7 +30,7 @@
                                 </el-col>
                                 <!-- Thirdary -->
                                 <el-col :span="18">
-                                    <el-tag type="warning" v-for="(item3,index3) in item2.children" :key="item3.id" @close="deleteRight(scope.row,item3.id)" closable>
+                                    <el-tag type="warning" v-for="item3 in item2.children" :key="item3.id" @close="deleteRight(scope.row,item3.id)" closable>
                                         {{ item3.authName }}
                                     </el-tag>
                                 </el-col>

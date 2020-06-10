@@ -1,9 +1,8 @@
 <template>
     <div>
-        <h3>角色</h3>
+        <h3>商品</h3>
     </div>
 </template>
-
 <script>
 
 </script>
