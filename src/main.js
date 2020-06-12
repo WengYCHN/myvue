@@ -7,8 +7,11 @@ import 'element-ui/lib/theme-chalk/index.css' // ElementUI
 import router from './router/router.js' // Router
 import './assets/css/global.css'  // Global CSS
 import axios from 'axios' // Axios
-import TreeTable  from 'vue-table-with-tree-grid' // vue-table-with-tree-grid
- 
+import TreeTable  from 'vue-table-with-tree-grid' // vue-table-with-tree-grid 
+import QuillEditor from 'vue-quill-editor'  // vue-quill-editor
+import 'quill/dist/quill.core.css'  // vue-quill-editor
+import 'quill/dist/quill.bubble.css'  // vue-quill-editor
+import 'quill/dist/quill.snow.css'// vue-quill-editor
 
 
 // Set axios baseURL
@@ -24,6 +27,19 @@ Vue.prototype.$http = axios // Axios
 Vue.config.productionTip = false
 Vue.use(ElementUI); // ElementUI
 Vue.component('tree-table',TreeTable)  // vue-table-with-tree-grid
+Vue.use(QuillEditor) // vue-quill-editor
+
+// Date format
+Vue.filter('dataFormat',function(originValue){
+  const date = new Date(originValue);
+  const year = date.getFullYear();
+  const month = (date.getMonth() + 1 + '').padStart(2, '0');
+  const day = (date.getDate() + '').padStart(2, '0');
+  const hour = (date.getHours() + '').padStart(2, '0');
+  const minute = (date.getMinutes() + '').padStart(2, '0');
+  const sedcond = (date.getSeconds() + '').padStart(2, '0');
+  return `${year}/${month}/${day} ${hour}:${minute}:${sedcond}`;
+})
 
 /* eslint-disable no-new */
 new Vue({

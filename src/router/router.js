@@ -9,6 +9,7 @@ import Roles from '../components/permission/Roles.vue'
 import Goods from '../components/produce/Goods.vue'
 import Params from '../components/produce/Params.vue'
 import Categories from '../components/produce/Categories.vue'
+import Add from '../components/produce/Add.vue'
 import Orders from '../components/order/Orders.vue'
 import Reports from '../components/report/Reports.vue'
 
@@ -31,6 +32,7 @@ const router =  new Router({
                 {path: '/goods', component: Goods},
                 {path: '/params', component: Params},
                 {path: '/categories', component: Categories},
+                {path: '/goods/add', component: Add},
                 {path: '/orders', component: Orders},
                 {path: '/reports', component: Reports},
             ]

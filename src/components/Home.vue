@@ -2,7 +2,7 @@
     <el-container class="home-container">
         <!-- Header -->
         <el-header>
-            <span>公路港后台管理系统</span>
+            <span>ABCDEFGHIJ</span>
             <el-button type="info" @click="userLogout">退出</el-button>
         </el-header>
         <el-container>
@@ -56,7 +56,6 @@
                 console.log(result);
                 if(result.data.meta.status !== 200) return this.$message.error(result.data.meta.meg);
                 this.menuList = result.data.data;
-                console.log(this.menuList);
             },
             toggleCollapse:function(){
                 this.isCollapse = !this.isCollapse;

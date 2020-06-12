@@ -3,7 +3,7 @@
         <div class="login_box">
             <el-form ref="loginFormRef" :model="loginForm" :rules="loginFormRules" label-width="0px" class="login_from">
                 <!-- Title -->
-                <h1 class="login_title">公路港后台管理系统</h1>
+                <h1 class="login_title">ABCDEFGHIJ</h1>
                 <!-- Account -->
                 <el-form-item prop="username">
                     <el-input @keyup.enter.native="verifyLoginInfo()" v-model="loginForm.username" prefix-icon="el-icon-user" ></el-input>
