@@ -8,11 +8,11 @@ import router from './router/router.js' // Router
 import './assets/css/global.css'  // Global CSS
 import axios from 'axios' // Axios
 import TreeTable  from 'vue-table-with-tree-grid' // vue-table-with-tree-grid 
-import QuillEditor from 'vue-quill-editor'  // vue-quill-editor
-import 'quill/dist/quill.core.css'  // vue-quill-editor
-import 'quill/dist/quill.bubble.css'  // vue-quill-editor
-import 'quill/dist/quill.snow.css'// vue-quill-editor
-import echarts from "echarts" // echarts
+// import QuillEditor from 'vue-quill-editor'  // vue-quill-editor
+// import 'quill/dist/quill.core.css'  // vue-quill-editor
+// import 'quill/dist/quill.bubble.css'  // vue-quill-editor
+// import 'quill/dist/quill.snow.css'// vue-quill-editor
+// import echarts from "echarts" // echarts
 import NProgress from 'nprogress' // nprogress
 import 'nprogress/nprogress.css'  // nprogress
 
@@ -26,7 +26,7 @@ axios.interceptors.request.use(config => {
     // Request interceptor
     NProgress.start();
     config.headers.Authorization = window.sessionStorage.getItem('token');
-    return config
+    return config;
 })
 
 //  Response interceptor
@@ -37,8 +37,8 @@ Vue.prototype.$http = axios // Axios
 Vue.config.productionTip = false
 Vue.use(ElementUI); // ElementUI
 Vue.component('tree-table',TreeTable)  // vue-table-with-tree-grid
-Vue.use(QuillEditor) // vue-quill-editor
-Vue.prototype.$echarts = echarts; // echarts
+// Vue.use(QuillEditor) // vue-quill-editor
+// Vue.prototype.$echarts = echarts; // echarts
 
 // Date format
 Vue.filter('dataFormat',function(originValue){

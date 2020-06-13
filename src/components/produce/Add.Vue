@@ -35,7 +35,7 @@
                     </el-tab-pane>
                     <el-tab-pane label="商品参数" name="1">
                         <el-form-item  v-for="item in paramList" :key="item.attr_id">
-                            <el-tag type="danger" size="medium">{{ item.attr_name }}</el-tag>
+                            <el-tag type="danger" size="medium"> {{ item.attr_name }} </el-tag>
                             <!-- Checkbox -->
                             <el-checkbox-group v-model="item.attr_vals">
                                 <el-checkbox v-for="(item,index) in item.attr_vals" :key="index" :label="item"></el-checkbox>
@@ -48,8 +48,8 @@
                                 <el-input v-model="item.attr_vals"></el-input>
                         </el-form-item>
                     </el-tab-pane>
-                        <el-tab-pane label="商品图片" name="3">
-                            <el-upload action="https://www.liulongbin.top:8888/api/private/v1/upload" :on-preview="handlePreview" :on-remove="handleRemove" list-type="picture" :headers="headerObject" :on-success="pictureLoadSuccess">
+                    <el-tab-pane label="商品图片" name="3">
+                        <el-upload action="https://www.liulongbin.top:8888/api/private/v1/upload" :on-preview="handlePreview" :on-remove="handleRemove" list-type="picture" :headers="headerObject" :on-success="pictureLoadSuccess">
                                 <el-button size="small" type="primary">点击上传</el-button>
                         </el-upload>
                     </el-tab-pane>
@@ -67,6 +67,7 @@
         </el-dialog>
     </div>
 </template>
+
 
 <script>
 import _ from 'loadsh'
@@ -113,7 +114,7 @@ export default {
         handleRemove(resource){
             console.log(resource);
             const resourcePath = resource.response.data.temp_path;
-            const index = this.addGoodsForm.pics.findIndex(item =>{item.pic == resourcePath});
+            const index = this.addGoodsForm.pics.findIndex(item => {item.pic == resourcePath});
             this.addGoodsForm.pics.splice(index,1);
             
         },
@@ -141,7 +142,7 @@ export default {
             var info = '';
             var sel = '';
             if(this.activeStep == 1){info = '参数'; sel = 'many'}
-            if(this.activeStep == 2){ info = '属性'; sel = 'only'}
+            if(this.activeStep == 2){info = '属性'; sel = 'only'}
             var result  = await this.$http.get('categories/' + this.addGoodsForm.goods_cat[this.addGoodsForm.goods_cat.length - 1] +'/attributes',{params:{sel: sel}});
             console.log(result);
             if(result.data.meta.status !== 200) return this.$message.error('获取' + info + '失败');
@@ -168,8 +169,7 @@ export default {
             if(result.data.meta.status !== 201) return this.$message.error('添加商品失败');
             this.$message.success('添加商品成功');
             this.$router.push('/goods');
-        }
-
+        },
     },
 }
 </script>
