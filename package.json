@@ -17,7 +17,7 @@
     "element-ui": "^2.13.2",
     "imagemin": "^5.0.0",
     "loadsh": "0.0.4",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "nprogress": "^0.2.0",
     "vue": "^2.5.2",
     "vue-quill-editor": "^3.0.6",
